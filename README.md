@@ -14,3 +14,8 @@ bl := arb.Bool()
 // Generate an arbitrary string.
 s := arb.String()
 ```
+## Documention
+
+Online documentation, which includes examples, can be found at: http://godoc.org/github.com/reiver/go-arbitrary
+
+[![GoDoc](https://godoc.org/github.com/reiver/go-arbitrary?status.svg)](https://godoc.org/github.com/reiver/go-arbitrary)
