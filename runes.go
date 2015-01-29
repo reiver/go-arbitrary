@@ -69,8 +69,9 @@ func (arb T) Runes(args ...interface{}) []rune {
 	// Construct the arbitrary []rune.
 		arbitrary_runes := make([]rune, num_arbitrary_runes)
 
+		l := len(runes)
 		for i,_ := range arbitrary_runes {
-			arbitrary_runes[i] = runes[arb.randomness.Intn(num_arbitrary_runes)]
+			arbitrary_runes[i] = runes[arb.randomness.Intn(l)]
 		}
 
 	// Return.
