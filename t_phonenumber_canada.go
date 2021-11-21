@@ -75,33 +75,33 @@ func (arb T) phonenumber_canada() string {
 		areacode = areacodes[arb.randomness.Intn(len(areacodes))]
 	}
 
-	var localpart1 string
+	var localpart1 int
 	{
-		localpart1 = fmt.Sprint(arb.randomness.Intn(1000))
+		localpart1 = arb.randomness.Intn(1000)
 	}
 
-	var localpart2 string
+	var localpart2 int
 	{
-		localpart2 = fmt.Sprint(arb.randomness.Intn(10000))
+		localpart2 = arb.randomness.Intn(10000)
 	}
 
 	var format string
 	{
 		var formats []string = []string{
-			"%s-%s%s",
-			"%s-%s-%s",
-			"%s %s %s",
-			"%s %s%s",
-			"(%s) %s%s",
-			"(%s)%s%s",
-			"(%s) %s-%s",
-			"(%s)%s-%s",
-			"(%s) %s %s",
-			"(%s)%s %s",
-			"%s/%s-%s",
-			"+1%s%s%s",
-			"+1-%s-%s-%s",
-			"+1 %s %s %s",
+			"%s-%03d%04d",
+			"%s-%03d-%04d",
+			"%s %03d %04d",
+			"%s %03d%04d",
+			"(%s) %03d%04d",
+			"(%s)%03d%04d",
+			"(%s) %03d-%04d",
+			"(%s)%03d-%04d",
+			"(%s) %03d %04d",
+			"(%s)%03d %04d",
+			"%s/%03d-%04d",
+			"+1%s%03d%04d",
+			"+1-%s-%03d-%04d",
+			"+1 %s %03d %04d",
 		}
 
 		format = formats[arb.randomness.Intn(len(formats))]
