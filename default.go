@@ -15,6 +15,21 @@ func Bool() bool {
 }
 
 // PhoneNumber returns an arbitrary phone‐number.
+//
+// Some example phone‐number include:
+//
+//	289-5625421
+//	(604) 585-1234
+//	٠٩٦-٣٦١-٦٦٧٦
+//	613/978-1920
+//	+20-13-004-6453
+//	(782) 440 6832
+//	+٢٠-٩٣-٧٤٨-٧٩٨١
+//	093-340-0709
+//	+1-403-870-6449
+//	+18250827424
+//
+// (Note that there are other phone‐number formats too, in addition to the formats that are implied by the examples provided here.)
 func PhoneNumber() string {
 	return Default.PhoneNumber()
 }
