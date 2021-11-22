@@ -1,169 +1,8 @@
 package arbitrary
 
-
-var passwords []string = []string{
-	"!@#$%^&*",
-	"000000",
-	"111111",
-	"11111111",
-	"112233",
-	"121212",
-	"123123",
-	"123321",
-	"1234",
-	"12345",
-	"123456",
-	"1234567",
-	"12345678",
-	"123456789",
-	"1234567890",
-	"123qwe",
-	"131313",
-	"159753",
-	"18atcskd2w",
-	"1q2w3e",
-	"1q2w3e4r",
-	"1q2w3e4r5t",
-	"1qaz2wsx",
-	"2000",
-	"3210",
-	"3rjs1la7qe",
-	"4321",
-	"43210",
-	"54321",
-	"543210",
-	"555555",
-	"654321",
-	"6543210",
-	"666666",
-	"6969",
-	"696969",
-	"7654321",
-	"76543210",
-	"777777",
-	"7777777",
-	"87654321",
-	"876543210",
-	"888888",
-	"987654321",
-	"9876543210",
-	"aa123456",
-	"aaaaaa",
-	"aaron431",
-	"abc123",
-	"access",
-	"admin",
-	"adobe123",
-	"amanda",
-	"andrew",
-	"aries",
-	"aquarius",
-	"asdfgh",
-	"ashley",
-	"asshole",
-	"azerty",
-	"babylon",
-	"bailey",
-	"baseball",
-	"batman",
-	"biteme",
-	"buster",
-	"cancer",
-	"capricorn",
-	"charlie",
-	"cheese",
-	"chelsea",
-	"computer",
-	"daniel",
-	"donald",
-	"Dragon",
-	"dragon",
-	"easy",
-	"flower",
-	"Football",
-	"football",
-	"freedom",
-	"fuck",
-	"fuckme",
-	"gemini",
-	"george",
-	"ginger",
-	"google",
-	"harley",
-	"hockey",
-	"hunter",
-	"iloveyou",
-	"letmein",
-	"libra",
-	"jennifer",
-	"jessica",
-	"jesus",
-	"jordan",
-	"joshua",
-	"killer",
-	"klaster",
-	"leo",
-	"login",
-	"love",
-	"lovely",
-	"maggie",
-	"master",
-	"matrix",
-	"matthew",
-	"michael",
-	"michelle",
-	"Monkey",
-	"monkey",
-	"Million2",
-	"mustang",
-	"mynoob",
-	"nicole",
-	"ninja",
-	"oooooooo",
-	"pass",
-	"passw0rd",
-	"password",
-	"password1",
-	"pepper",
-	"photoshop",
-	"picture1",
-	"princess",
-	"pisces",
-	"program",
-	"pussy",
-	"qazwsx",
-	"qqww1122",
-	"qwerty",
-	"qwerty123",
-	"Qwertyuiop",
-	"qwertyuiop",
-	"racecar",
-	"ranger",
-	"robert",
-	"rrrr",
-	"sagittarius",
-	"scorpio",
-	"senha",
-	"shadow",
-	"soccer",
-	"solo",
-	"starwars",
-	"summer",
-	"sunshine",
-	"superman",
-	"taurus",
-	"thomas",
-	"thunder",
-	"tigger",
-	"trustno1",
-	"virgo",
-	"welcome",
-	"whatever",
-	"wrongpassword",
-	"zaq1zaq1",
-	"zxcvbnm",
-}
-
+import (
+	"strings"
+)
 
 // Password returns an arbitrary password.
 func (arb T) Password() string {
@@ -171,6 +10,25 @@ func (arb T) Password() string {
 	var result string
 	{
 		result = passwords[arb.randomness.Intn(len(passwords))]
+	}
+
+	if 0 == arb.randomness.Intn(7) {
+
+		var storage strings.Builder
+
+		var limit int = 2 + arb.randomness.Intn(6)
+
+		for i:=0; i<limit; i++ {
+			if 0 != i {
+				storage.WriteRune(' ')
+			}
+
+			var s string = words[arb.randomness.Intn(len(words))]
+
+			storage.WriteString(s)
+		}
+
+		result = storage.String()
 	}
 
 	if 0 == arb.randomness.Intn(97) {
