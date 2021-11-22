@@ -25,6 +25,13 @@ func (arb T) Password() string {
 
 			var s string = words[arb.randomness.Intn(len(words))]
 
+			if 0 == arb.randomness.Intn(4) {
+				s = strings.ToUpper(s)
+			}
+			if 0 == arb.randomness.Intn(4) {
+				s = strings.ToTitle(s)
+			}
+
 			storage.WriteString(s)
 		}
 
@@ -33,6 +40,62 @@ func (arb T) Password() string {
 
 	if 0 == arb.randomness.Intn(97) {
 		result = arb.String()
+	}
+
+	if 0 == arb.randomness.Intn(2) {
+
+		if 0 == arb.randomness.Intn(4) {
+			result = strings.Replace(result, " ", ".", 1)
+		}
+
+		if 0 == arb.randomness.Intn(2) {
+			result = strings.ReplaceAll(result, " ", "_")
+		}
+	}
+
+	if 0 == arb.randomness.Intn(2) {
+
+		if 0 == arb.randomness.Intn(2) {
+			result = strings.Replace(result, "A", "4", 1)
+		}
+		if 0 == arb.randomness.Intn(2) {
+			result = strings.Replace(result, "a", "4", 1)
+		}
+
+		if 0 == arb.randomness.Intn(2) {
+			result = strings.Replace(result, "E", "3", 1)
+		}
+		if 0 == arb.randomness.Intn(2) {
+			result = strings.Replace(result, "e", "3", 1)
+		}
+
+		if 0 == arb.randomness.Intn(2) {
+			result = strings.Replace(result, "G", "9", 1)
+		}
+		if 0 == arb.randomness.Intn(2) {
+			result = strings.Replace(result, "g", "9", 1)
+		}
+
+		if 0 == arb.randomness.Intn(2) {
+			result = strings.Replace(result, "I", "1", 1)
+		}
+		if 0 == arb.randomness.Intn(2) {
+			result = strings.Replace(result, "i", "1", 1)
+		}
+
+		if 0 == arb.randomness.Intn(2) {
+			result = strings.Replace(result, "O", "0", 1)
+		}
+		if 0 == arb.randomness.Intn(2) {
+			result = strings.Replace(result, "o", "0", 1)
+		}
+
+		if 0 == arb.randomness.Intn(2) {
+			result = strings.Replace(result, "S", "$", 1)
+		}
+		if 0 == arb.randomness.Intn(2) {
+			result = strings.Replace(result, "s", "$", 1)
+		}
 	}
 
 	return result
