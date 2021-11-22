@@ -14,6 +14,11 @@ func Bool() bool {
 	return Default.Bool()
 }
 
+// Password returns an arbitrary password.
+func Password() string {
+	return Default.Password()
+}
+
 // PhoneNumber returns an arbitrary phone‐number.
 //
 // Some example phone‐number include:
