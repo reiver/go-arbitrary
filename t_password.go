@@ -14,6 +14,8 @@ func (arb T) Password() string {
 
 	if 0 == arb.randomness.Intn(7) {
 
+		var words []string = languages[arb.randomness.Intn(len(languages))]
+
 		var storage strings.Builder
 
 		var limit int = 2 + arb.randomness.Intn(6)

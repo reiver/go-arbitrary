@@ -1,6 +1,6 @@
 package arbitrary
 
-var words []string = []string{
+var wordsEnglish []string = []string{
 	"abandon",
 	"ability",
 	"able",
