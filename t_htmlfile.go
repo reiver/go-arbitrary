@@ -51,6 +51,7 @@ var (
 	}
 )
 
+// HTMLFile returns an arbitrary fs.File regular-file whose content is an HTML file.
 func (arb T) HTMLFile() fs.File {
 
 	var filecontent strfs.Content

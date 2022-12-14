@@ -16,6 +16,11 @@ func Bool() bool {
 	return Default.Bool()
 }
 
+// HTMLFile returns an arbitrary fs.File regular-file whose content is an HTML file.
+func HTMLFile() fs.File {
+	return Default.HTMLFile()
+}
+
 // NetAddr returns an arbitrary net.Addr.
 func NetAddr() net.Addr {
 	return Default.NetAddr()
