@@ -26,6 +26,11 @@ func NetAddr() net.Addr {
 	return Default.NetAddr()
 }
 
+// NetPort returns an arbitrary network port.
+func NetPort() uint16 {
+	return Default.NetPort()
+}
+
 // Password returns an arbitrary password.
 func Password() string {
 	return Default.Password()
