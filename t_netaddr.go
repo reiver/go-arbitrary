@@ -32,7 +32,7 @@ func (arb T) NetAddr() net.Addr {
 		if 0 == arb.randomness.Intn(30) {
 			port = 80
 		}
-		if 0 == arb.randomness.Intn(40) {
+		if 0 == arb.randomness.Intn(29) {
 			port = 79
 		}
 	}
