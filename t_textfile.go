@@ -27,6 +27,7 @@ var (
 	}
 )
 
+// TextFile returns an arbitrary fs.File regular-file whose content is a text-file.
 func (arb T) TextFile() fs.File {
 
 	var filecontent strfs.Content

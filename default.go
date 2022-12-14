@@ -58,3 +58,8 @@ func Runes(a ...interface{}) []rune {
 func String(a ...interface{}) string {
 	return Default.String(a...)
 }
+
+// TextFile returns an arbitrary fs.File regular-file whose content is a text-file.
+func TextFile() fs.File {
+	return Default.TextFile()
+}
