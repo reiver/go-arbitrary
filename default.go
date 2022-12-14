@@ -2,6 +2,7 @@ package arbitrary
 
 import (
 	"math/rand"
+	"io/fs"
 	"net"
 	"time"
 )
@@ -43,6 +44,11 @@ func Password() string {
 // (Note that there are other phone‐number formats too, in addition to the formats that are implied by the examples provided here.)
 func PhoneNumber() string {
 	return Default.PhoneNumber()
+}
+
+// RegularFile returns an arbitrary fs.File regular-file.
+func RegularFile() fs.File {
+	return Default.RegularFile()
 }
 
 func Runes(a ...interface{}) []rune {
