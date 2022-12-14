@@ -2,6 +2,7 @@ package arbitrary
 
 import (
 	"math/rand"
+	"net"
 	"time"
 )
 
@@ -12,6 +13,11 @@ var (
 // Bool returns an arbitrary bool.
 func Bool() bool {
 	return Default.Bool()
+}
+
+// NetAddr returns an arbitrary net.Addr.
+func NetAddr() net.Addr {
+	return Default.NetAddr()
 }
 
 // Password returns an arbitrary password.
