@@ -1,7 +1,7 @@
 package arbitrary
 
 import (
-	"github.com/reiver/go-strfs"
+	"sourcecode.social/reiver/go-strfs"
 
 	"io/fs"
 	"time"
