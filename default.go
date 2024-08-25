@@ -36,6 +36,11 @@ func Password() string {
 	return Default.Password()
 }
 
+// Password returns an arbitrary pct-encoded.
+func PctEncoded() string {
+	return Default.PctEncoded()
+}
+
 // PhoneNumber returns an arbitrary phone‐number.
 //
 // Some example phone‐number include:
