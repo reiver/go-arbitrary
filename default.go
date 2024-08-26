@@ -36,7 +36,7 @@ func Password() string {
 	return Default.Password()
 }
 
-// Password returns an arbitrary pct-encoded.
+// PctEncoded returns an arbitrary pct-encoded.
 func PctEncoded() string {
 	return Default.PctEncoded()
 }
