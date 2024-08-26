@@ -21,6 +21,11 @@ func HTMLFile() fs.File {
 	return Default.HTMLFile()
 }
 
+// InternetHostName returns an arbitrary Internet hostname.
+func InternetHostName() string {
+	return Default.InternetHostName()
+}
+
 // NetAddr returns an arbitrary net.Addr.
 func NetAddr() net.Addr {
 	return Default.NetAddr()
